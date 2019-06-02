@@ -1,6 +1,7 @@
 from numpy.core.multiarray import ndarray
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Activation
+from tensorflow.keras.layers import Dense, Activation, Flatten, Lambda
+import numpy as np
 
 
 class FFNN:
@@ -18,9 +19,11 @@ class FFNN:
         """
         self.net = Sequential()
         self.net.add(Dense(n_hidden, input_dim=n_inputs, activation='tanh'))
-        for i in range(n_layers - 1):
-            self.net.add(Dense(n_hidden, input_dim=n_hidden, activation='tanh'))
-        self.net.add(Dense(3, activation='softmax'))
+        #for i in range(n_layers - 1):
+         #   self.net.add(Dense(n_hidden, input_dim=n_hidden, activation='tanh'))
+        #self.net.add(Flatten())
+        self.net.add(Dense(n_outputs))
+        self.net.add(Activation('softmax'))
 
         self.net.compile(optimizer='rmsprop', loss='mse', metrics=['accuracy'])
 
@@ -39,4 +42,8 @@ class FFNN:
         :param patterns: patterns in an array
         :return: array of predictions
         """
-        return self.net.predict_on_batch(patterns)
+        softmaxes = self.net.predict_on_batch(patterns)
+        predictions = np.zeros(600)
+        for i in range(600):
+            predictions[i] = np.argmax(softmaxes[i])
+        return predictions
