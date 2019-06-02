@@ -26,8 +26,8 @@ class ImagePreProcessor:
         """
         img = plt.imread(path)
         img = color.rgb2gray(img)
-        (H, hog_img) = ftr.hog(img, orientations=9,
-                               pixels_per_cell=(self.cell_size, self.cell_size),
-                               cells_per_block=(self.block_size, self.block_size),
-                               visualise=True, block_norm='L2-Hys')
-        return H
+        h = ftr.hog(img, orientations=9,
+                    pixels_per_cell=(self.cell_size, self.cell_size),
+                    cells_per_block=(self.block_size, self.block_size),
+                    visualize=False, block_norm='L2-Hys')
+        return h

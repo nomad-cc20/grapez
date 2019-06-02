@@ -16,10 +16,11 @@ class FFNN:
         :param n_outputs: number of neurons in the output layer
         :param n_layers: number of hidden layers
         """
-        self.net = Sequential(n_inputs)
-        for i in range (n_layers):
-            self.net.add(Dense(n_hidden, input_dim=1, activation='tanh'))
-        self.net.add(Dense(n_outputs, activation='linear'))
+        self.net = Sequential()
+        self.net.add(Dense(n_hidden, input_dim=n_inputs, activation='tanh'))
+        for i in range(n_layers - 1):
+            self.net.add(Dense(n_hidden, input_dim=n_hidden, activation='tanh'))
+        self.net.add(Dense(3, activation='softmax'))
 
         self.net.compile(optimizer='rmsprop', loss='mse', metrics=['accuracy'])
 
