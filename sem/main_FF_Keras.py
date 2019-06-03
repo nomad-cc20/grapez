@@ -68,7 +68,7 @@ for i in range(int(clusters_val[0]), int(clusters_val[1])):
 for i in range(int(clusters_val[1]), int(clusters_val[2])):
     expected_val[i] = 2
 
-net_ff = FFNN(cellCount, 6, 3, 1)
+net_ff = FFNN(cellCount, 10, 3, 1)
 epochs = 1000
 
 net_ff.fit(patterns_train, expected_train, epochs)

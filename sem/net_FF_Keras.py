@@ -19,13 +19,13 @@ class FFNN:
         """
         self.net = Sequential()
         self.net.add(Dense(n_hidden, input_dim=n_inputs, activation='tanh'))
-        #for i in range(n_layers - 1):
-         #   self.net.add(Dense(n_hidden, input_dim=n_hidden, activation='tanh'))
+        for i in range(n_layers - 1):
+            self.net.add(Dense(n_hidden, input_dim=n_hidden, activation='tanh'))
         #self.net.add(Flatten())
         self.net.add(Dense(n_outputs))
         self.net.add(Activation('softmax'))
 
-        self.net.compile(optimizer='rmsprop', loss='mse', metrics=['accuracy'])
+        self.net.compile(optimizer='Adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
     def fit(self, patterns: ndarray, expected: ndarray, n_epochs: int):
         """

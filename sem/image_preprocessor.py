@@ -29,5 +29,5 @@ class ImagePreProcessor:
         h = ftr.hog(img, orientations=9,
                     pixels_per_cell=(self.cell_size, self.cell_size),
                     cells_per_block=(self.block_size, self.block_size),
-                    visualize=False, block_norm='L2-Hys')
+                    visualise=False, block_norm='L2-Hys')
         return h

@@ -1,11 +1,11 @@
 import numpy as np
-from keras.layers import Dense, Convolution2D, MaxPooling2D, Flatten, Activation
-from keras.models import Sequential
+from tensorflow.keras.layers import Dense, Convolution2D, MaxPooling2D, Flatten, Activation
+from tensorflow.keras.models import Sequential
 from numpy.core.multiarray import ndarray
 from keras_preprocessing import image
 
 
-class CN:
+class CNN:
     """
     An implementation of convolution net.
     """
@@ -40,16 +40,16 @@ class CN:
             optimizer='Adam',
             metrics=['accuracy'])
 
-    def fit(self, patterns: ndarray, batch_size: int, n_epochs: int):
+    def fit(self, patterns, batch_size: int, n_epochs: int):
         """
         Pattern training.
-        :param patterns:
-        :param batch_size:
-        :param n_epochs:
+        :param patterns: Patterns.
+        :param batch_size: Size of learning batch.
+        :param n_epochs: Count of epochs.
         """
         self.net.fit_generator(
             patterns,
-            steps_per_epoch = patterns.samples / batch_size,
+            steps_per_epoch=patterns.samples / batch_size,
             epochs=n_epochs,
             verbose=1)
 
@@ -66,3 +66,10 @@ class CN:
         img = np.expand_dims(img, axis=0)
 
         return self.net.predict(img)
+
+    def evaluate_generator(self, generator, n_steps: int):
+        """
+        :param generator: The image generator.
+        :param n_steps: Count of steps.
+        """
+        return self.net.evaluate_generator(generator, n_steps, verbose=1)
