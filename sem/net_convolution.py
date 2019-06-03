@@ -46,7 +46,6 @@ class CN:
         :param patterns:
         :param batch_size:
         :param n_epochs:
-        :return:
         """
         self.net.fit_generator(
             patterns,

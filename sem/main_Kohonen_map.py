@@ -29,7 +29,7 @@ for folderName in os.listdir(path + trainFolder):
 patterns = np.transpose(patterns)
 
 net_km = Kohonen(3, length)
-net_km.train(patterns, 0.9, 0.995, 5, 1)
+net_km.train(patterns, 0.75, 0.995, 1000, 1)
 
 i = 0
 results = np.zeros((3, 200))
