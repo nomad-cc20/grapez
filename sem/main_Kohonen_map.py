@@ -19,17 +19,29 @@ for folderName in os.listdir(path + trainFolder):
             length = len(img)
         patternCount = patternCount + 1
 
-patterns = np.zeros((patternCount, length))
+patterns_train = np.zeros((patternCount, length))
 i = 0
 for folderName in os.listdir(path + trainFolder):
     for fileName in os.listdir(path + trainFolder + '/' + folderName):
         img = ipp.serve(path + trainFolder + '/' + folderName + '/' + fileName)
-        patterns[i] = img
+        patterns_train[i] = img
         i = i + 1
-patterns = np.transpose(patterns)
+patterns_train = np.transpose(patterns_train)
 
 net_km = Kohonen(3, length)
-net_km.train(patterns, 0.75, 0.995, 100, 1)
+net_km.train(patterns_train, 0.75, 0.995, 1000, 1)
+
+i = 0
+results = np.zeros((3, 200))
+for folderName in os.listdir(path + trainFolder):
+    j = 0
+    for fileName in tqdm(os.listdir(path + trainFolder + '/' + folderName)):
+        img = ipp.serve(path + trainFolder + '/' + folderName + '/' + fileName)
+        results[i, j] = net_km.equip(img)[0]
+        j = j + 1
+    i = i + 1
+
+print(results)
 
 i = 0
 results = np.zeros((3, 200))
@@ -43,20 +55,21 @@ for folderName in os.listdir(path + testFolder):
 
 print(results)
 
-patterns_val = np.zeros(600)
+patterns_val = np.zeros((patternCount, length))
 i = 0
-for folderName in os.listdir(path + trainFolder):
-    for fileName in os.listdir(path + trainFolder + '/' + folderName):
-        img = ipp.serve(path + trainFolder + '/' + folderName + '/' + fileName)
+for folderName in os.listdir(path + testFolder):
+    for fileName in os.listdir(path + testFolder + '/' + folderName):
+        img = ipp.serve(path + testFolder + '/' + folderName + '/' + fileName)
         patterns_val[i] = img
         i = i + 1
+patterns_val = np.transpose(patterns_val)
 
-expected_val = np.zeros(600)
+expected = np.zeros(600)
 for i in range(200, 400):
-    expected_val[i] = 1
+    expected[i] = 1
 for i in range(400, 600):
-    expected_val[i] = 2
+    expected[i] = 2
 
-print(net_km.evaluate(patterns, expected_val, 600))
-print(net_km.evaluate(patterns_val, expected_val, 600))
+print(net_km.evaluate(patterns_train, expected, 600))
+print(net_km.evaluate(patterns_val, expected, 600))
 

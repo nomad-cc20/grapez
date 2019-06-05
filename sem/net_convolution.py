@@ -51,7 +51,7 @@ class CNN:
             patterns,
             steps_per_epoch=patterns.samples / batch_size,
             epochs=n_epochs,
-            verbose=1)
+            verbose=2)
 
     def predict(self, path: str, bits) -> ndarray:
         """
@@ -67,9 +67,9 @@ class CNN:
 
         return self.net.predict(img)
 
-    def evaluate_generator(self, generator, n_steps: int):
+    def evaluate(self, generator, n_steps: int):
         """
         :param generator: The image generator.
         :param n_steps: Count of steps.
         """
-        return self.net.evaluate_generator(generator, n_steps, verbose=1)
+        return self.net.evaluate_generator(generator, n_steps, verbose=1)[1]

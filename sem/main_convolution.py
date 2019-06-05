@@ -55,8 +55,8 @@ test_generator = test_datagen.flow_from_directory(
 )
 
 # resulting number of images = steps * batch_size
-out = net_c.evaluate_generator(test_generator, 1000)
-print(out)
+print(net_c.evaluate(train_generator, 100))
+print(net_c.evaluate(test_generator, 100))
 
 
 path = 'img/'

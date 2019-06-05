@@ -74,7 +74,7 @@ class Kohonen:
         """
         right = 0
         for i in range(count):
-            prediction = self.equip(patterns[:,i])
+            prediction = self.equip(patterns[:, i])[0]
             if prediction == expected[i]:
                 right = right + 1
 
