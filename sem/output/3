@@ -1,0 +1,201 @@
+"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe" C:/Users/nomad/Desktop/semestralka/grapez/sem/main.py
+C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\lib\site-packages\skimage\feature\_hog.py:239: skimage_deprecation: Argument `visualise` is deprecated and will be changed to `visualize` in v0.16
+  'be changed to `visualize` in v0.16', skimage_deprecation)
+WARNING:tensorflow:From C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py:435: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Tested feed-forward net:
+cell size: 8
+block size: 2
+hidden layer neurons: 6
+hidden layers: 1
+epochs1000
+with a result of
+(1.0, 0.29)
+None
+Tested feed-forward net:
+cell size: 4
+block size: 2
+hidden layer neurons: 6
+hidden layers: 1
+epochs1000
+with a result of
+(1.0, 0.29833333333333334)
+None
+Tested feed-forward net:
+cell size: 8
+block size: 3
+hidden layer neurons: 6
+hidden layers: 1
+epochs1000
+with a result of
+(1.0, 0.2916666666666667)
+None
+Tested feed-forward net:
+cell size: 8
+block size: 2
+hidden layer neurons: 10
+hidden layers: 1
+epochs1000
+with a result of
+(1.0, 0.2866666666666667)
+None
+Tested feed-forward net:
+cell size: 8
+block size: 2
+hidden layer neurons: 6
+hidden layers: 3
+epochs1000
+with a result of
+(1.0, 0.30333333333333334)
+None
+Found 600 images belonging to 3 classes.
+Found 600 images belonging to 3 classes.
+WARNING:tensorflow:From C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\lib\site-packages\tensorflow\python\ops\math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+
+ 1/19 [>.............................] - ETA: 3s - loss: 2.2631e-06 - acc: 1.0000
+ 4/19 [=====>........................] - ETA: 0s - loss: 2.4671e-06 - acc: 1.0000
+ 6/19 [========>.....................] - ETA: 0s - loss: 2.4494e-06 - acc: 1.0000
+ 9/19 [=============>................] - ETA: 0s - loss: 2.2712e-06 - acc: 1.0000
+13/19 [===================>..........] - ETA: 0s - loss: 2.4081e-06 - acc: 1.0000
+16/19 [========================>.....] - ETA: 0s - loss: 2.5608e-06 - acc: 1.0000
+19/19 [==============================] - 1s 28ms/step - loss: 2.5424e-06 - acc: 1.0000
+
+ 1/19 [>.............................] - ETA: 0s - loss: 0.9884 - acc: 0.8750
+ 4/19 [=====>........................] - ETA: 0s - loss: 1.7009 - acc: 0.8125
+ 6/19 [========>.....................] - ETA: 0s - loss: 1.5438 - acc: 0.8229
+10/19 [==============>...............] - ETA: 0s - loss: 1.6481 - acc: 0.8000
+12/19 [=================>............] - ETA: 0s - loss: 1.6109 - acc: 0.8073
+14/19 [=====================>........] - ETA: 0s - loss: 1.6061 - acc: 0.8080
+17/19 [=========================>....] - ETA: 0s - loss: 1.5555 - acc: 0.8107
+19/19 [==============================] - 0s 23ms/step - loss: 1.6057 - acc: 0.8083
+Tested convolution net:
+filters: 32
+kernel size: (3, 3)
+input shape: (40, 40, 3)
+strides: (1, 1)
+hidden layers: 1
+epochs: 1000
+with a result of
+(1.0, 0.80833334)
+None
+Found 600 images belonging to 3 classes.
+Found 600 images belonging to 3 classes.
+
+ 1/19 [>.............................] - ETA: 3s - loss: 2.0862e-07 - acc: 1.0000
+ 3/19 [===>..........................] - ETA: 1s - loss: 2.1545e-07 - acc: 1.0000
+ 5/19 [======>.......................] - ETA: 0s - loss: 2.1160e-07 - acc: 1.0000
+ 7/19 [==========>...................] - ETA: 0s - loss: 2.0329e-07 - acc: 1.0000
+10/19 [==============>...............] - ETA: 0s - loss: 2.0657e-07 - acc: 1.0000
+13/19 [===================>..........] - ETA: 0s - loss: 2.0589e-07 - acc: 1.0000
+16/19 [========================>.....] - ETA: 0s - loss: 2.0419e-07 - acc: 1.0000
+18/19 [===========================>..] - ETA: 0s - loss: 2.0831e-07 - acc: 1.0000
+19/19 [==============================] - 1s 33ms/step - loss: 2.1303e-07 - acc: 1.0000
+
+ 1/19 [>.............................] - ETA: 0s - loss: 1.3512 - acc: 0.8125
+ 3/19 [===>..........................] - ETA: 0s - loss: 1.3628 - acc: 0.8229
+ 5/19 [======>.......................] - ETA: 0s - loss: 1.4069 - acc: 0.8313
+ 7/19 [==========>...................] - ETA: 0s - loss: 1.5575 - acc: 0.8259
+ 9/19 [=============>................] - ETA: 0s - loss: 1.3662 - acc: 0.8438
+11/19 [================>.............] - ETA: 0s - loss: 1.3634 - acc: 0.8409
+14/19 [=====================>........] - ETA: 0s - loss: 1.5903 - acc: 0.8170
+16/19 [========================>.....] - ETA: 0s - loss: 1.6009 - acc: 0.8066
+19/19 [==============================] - 1s 29ms/step - loss: 1.5373 - acc: 0.8100
+Tested convolution net:
+filters: 64
+kernel size: (3, 3)
+input shape: (40, 40, 3)
+strides: (1, 1)
+hidden layers: 1
+epochs: 1000
+with a result of
+(1.0, 0.81)
+None
+Found 600 images belonging to 3 classes.
+Found 600 images belonging to 3 classes.
+
+ 1/19 [>.............................] - ETA: 3s - loss: 1.0157e-05 - acc: 1.0000
+ 4/19 [=====>........................] - ETA: 0s - loss: 1.6730e-05 - acc: 1.0000
+ 7/19 [==========>...................] - ETA: 0s - loss: 2.1973e-05 - acc: 1.0000
+10/19 [==============>...............] - ETA: 0s - loss: 2.1465e-05 - acc: 1.0000
+13/19 [===================>..........] - ETA: 0s - loss: 1.9886e-05 - acc: 1.0000
+16/19 [========================>.....] - ETA: 0s - loss: 1.9452e-05 - acc: 1.0000
+19/19 [==============================] - 1s 30ms/step - loss: 1.9108e-05 - acc: 1.0000
+
+ 1/19 [>.............................] - ETA: 0s - loss: 0.9672 - acc: 0.8438
+ 4/19 [=====>........................] - ETA: 0s - loss: 1.5160 - acc: 0.8125
+ 6/19 [========>.....................] - ETA: 0s - loss: 1.5577 - acc: 0.8125
+ 8/19 [===========>..................] - ETA: 0s - loss: 1.5392 - acc: 0.8086
+10/19 [==============>...............] - ETA: 0s - loss: 1.4953 - acc: 0.8094
+13/19 [===================>..........] - ETA: 0s - loss: 1.4190 - acc: 0.8173
+15/19 [======================>.......] - ETA: 0s - loss: 1.3626 - acc: 0.8188
+17/19 [=========================>....] - ETA: 0s - loss: 1.4820 - acc: 0.8125
+19/19 [==============================] - 1s 27ms/step - loss: 1.4891 - acc: 0.8117
+Tested convolution net:
+filters: 32
+kernel size: (4, 4)
+input shape: (40, 40, 3)
+strides: (1, 1)
+hidden layers: 1
+epochs: 1000
+with a result of
+(1.0, 0.81166667)
+None
+Found 600 images belonging to 3 classes.
+Found 600 images belonging to 3 classes.
+
+ 1/19 [>.............................] - ETA: 2s - loss: 1.6019e-07 - acc: 1.0000
+ 5/19 [======>.......................] - ETA: 0s - loss: 1.9223e-07 - acc: 1.0000
+10/19 [==============>...............] - ETA: 0s - loss: 2.2333e-07 - acc: 1.0000
+15/19 [======================>.......] - ETA: 0s - loss: 2.1073e-07 - acc: 1.0000
+19/19 [==============================] - 0s 20ms/step - loss: 2.0662e-07 - acc: 1.0000
+
+ 1/19 [>.............................] - ETA: 0s - loss: 1.8173 - acc: 0.8438
+ 4/19 [=====>........................] - ETA: 0s - loss: 1.7099 - acc: 0.8047
+ 7/19 [==========>...................] - ETA: 0s - loss: 1.9299 - acc: 0.7946
+10/19 [==============>...............] - ETA: 0s - loss: 1.9224 - acc: 0.8031
+14/19 [=====================>........] - ETA: 0s - loss: 1.9494 - acc: 0.7946
+16/19 [========================>.....] - ETA: 0s - loss: 1.9482 - acc: 0.7969
+19/19 [==============================] - 0s 20ms/step - loss: 2.0077 - acc: 0.7917
+Tested convolution net:
+filters: 32
+kernel size: (2, 2)
+input shape: (40, 40, 3)
+strides: (1, 1)
+hidden layers: 2
+epochs: 1000
+with a result of
+(1.0, 0.7916667)
+None
+Found 600 images belonging to 3 classes.
+Found 600 images belonging to 3 classes.
+
+ 1/19 [>.............................] - ETA: 3s - loss: 1.1921e-07 - acc: 1.0000
+ 4/19 [=====>........................] - ETA: 0s - loss: 1.2433e-07 - acc: 1.0000
+ 7/19 [==========>...................] - ETA: 0s - loss: 1.2320e-07 - acc: 1.0000
+11/19 [================>.............] - ETA: 0s - loss: 1.2429e-07 - acc: 1.0000
+14/19 [=====================>........] - ETA: 0s - loss: 1.2360e-07 - acc: 1.0000
+17/19 [=========================>....] - ETA: 0s - loss: 1.2293e-07 - acc: 1.0000
+19/19 [==============================] - 1s 28ms/step - loss: 1.2274e-07 - acc: 1.0000
+
+ 1/19 [>.............................] - ETA: 0s - loss: 2.8311 - acc: 0.6562
+ 4/19 [=====>........................] - ETA: 0s - loss: 1.4013 - acc: 0.8203
+ 7/19 [==========>...................] - ETA: 0s - loss: 1.6233 - acc: 0.8214
+10/19 [==============>...............] - ETA: 0s - loss: 1.6680 - acc: 0.8156
+13/19 [===================>..........] - ETA: 0s - loss: 1.6940 - acc: 0.8197
+16/19 [========================>.....] - ETA: 0s - loss: 1.7836 - acc: 0.8145
+19/19 [==============================] - 0s 23ms/step - loss: 1.6781 - acc: 0.8250
+Tested convolution net:
+filters: 32
+kernel size: (3, 3)
+input shape: (40, 40, 3)
+strides: (1, 1)
+hidden layers: 3
+epochs: 1000
+with a result of
+(1.0, 0.825)
+None
+
+Process finished with exit code 0

@@ -1,0 +1,15 @@
+"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe" C:/Users/nomad/Desktop/semestralka/grapez/sem/main.py
+C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\lib\site-packages\skimage\feature\_hog.py:239: skimage_deprecation: Argument `visualise` is deprecated and will be changed to `visualize` in v0.16
+  'be changed to `visualize` in v0.16', skimage_deprecation)
+100%|██████████| 1000/1000 [2:23:45<00:00,  5.42s/it]
+Tested Kohonen:
+cell size: 8,
+block size: 2,
+alpha: 0.750000,
+correction: 0.995000,
+epochs: 1000
+with a result of
+(0.6733333333333333, 0.6366666666666667)
+None
+
+Process finished with exit code 0

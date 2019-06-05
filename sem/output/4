@@ -1,0 +1,53 @@
+"C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\python.exe" C:/Users/nomad/Desktop/semestralka/grapez/sem/main.py
+C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\lib\site-packages\skimage\feature\_hog.py:239: skimage_deprecation: Argument `visualise` is deprecated and will be changed to `visualize` in v0.16
+  'be changed to `visualize` in v0.16', skimage_deprecation)
+WARNING:tensorflow:From C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python36_64\lib\site-packages\tensorflow\python\ops\resource_variable_ops.py:435: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+Tested feed-forward net:
+cell size: 8
+block size: 2
+hidden layer neurons: 6
+hidden layers: 1
+epochs500
+with a result of
+(1.0, 0.28)
+None
+Tested feed-forward net:
+cell size: 4
+block size: 2
+hidden layer neurons: 6
+hidden layers: 1
+epochs500
+with a result of
+(1.0, 0.295)
+None
+Tested feed-forward net:
+cell size: 8
+block size: 3
+hidden layer neurons: 6
+hidden layers: 1
+epochs500
+with a result of
+(1.0, 0.29)
+None
+Tested feed-forward net:
+cell size: 8
+block size: 2
+hidden layer neurons: 10
+hidden layers: 1
+epochs500
+with a result of
+(1.0, 0.295)
+None
+Tested feed-forward net:
+cell size: 8
+block size: 2
+hidden layer neurons: 6
+hidden layers: 3
+epochs500
+with a result of
+(1.0, 0.305)
+None
+
+Process finished with exit code 0
