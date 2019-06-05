@@ -72,10 +72,25 @@ class Kohonen:
         :param count: count of patterns
         :return: accuracy
         """
+        size = count / 3
         right = 0
-        for i in range(count):
+
+        predictions = np.zeros(3)
+        for i in range(int(size)):
             prediction = self.equip(patterns[:, i])[0]
-            if prediction == expected[i]:
-                right = right + 1
+            predictions[prediction] = predictions[prediction] + 1
+        right = right + predictions[np.argmax(predictions)]
+
+        predictions = np.zeros(3)
+        for i in range(int(size), int(size * 2)):
+            prediction = self.equip(patterns[:, i])[0]
+            predictions[prediction] = predictions[prediction] + 1
+        right = right + predictions[int(np.argmax(predictions))]
+
+        predictions = np.zeros(3)
+        for i in range(int(size * 2), int(size * 3)):
+            prediction = self.equip(patterns[:, i])[0]
+            predictions[prediction] = predictions[prediction] + 1
+        right = right + predictions[np.argmax(predictions)]
 
         return right / count
