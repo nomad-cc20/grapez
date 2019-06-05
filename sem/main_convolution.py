@@ -18,7 +18,7 @@ bits = 8
 classes = 10 # count of result classes
 
 batch_size = 30 # learning batch
-epochs = 100
+epochs = 1000
 
 net_c = CNN(32, (3, 3), (height, width, depth), (1, 1), 1, 3)
 

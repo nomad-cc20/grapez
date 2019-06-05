@@ -21,7 +21,6 @@ class FFNN:
         self.net.add(Dense(n_hidden, input_dim=n_inputs, activation='tanh'))
         for i in range(n_layers - 1):
             self.net.add(Dense(n_hidden, input_dim=n_hidden, activation='tanh'))
-        #self.net.add(Flatten())
         self.net.add(Dense(n_outputs))
         self.net.add(Activation('softmax'))
 
@@ -34,7 +33,7 @@ class FFNN:
         :param expected: array of expected values
         :param n_epochs: number of epochs
         """
-        self.net.fit(patterns, expected, epochs=n_epochs, verbose=2)
+        self.net.fit(patterns, expected, epochs=n_epochs, verbose=0)
 
     def predict(self, patterns: ndarray) -> ndarray:
         """
@@ -47,3 +46,19 @@ class FFNN:
         for i in range(600):
             predictions[i] = np.argmax(softmaxes[i])
         return predictions
+
+    def evaluate(self, patterns: ndarray, expected: ndarray, count: int) -> float:
+        """
+        Evaluates the net.
+        :param patterns: validation data
+        :param expected: expected output per pattern
+        :param count: count of patterns
+        :return: accuracy
+        """
+        predictions = self.predict(patterns)
+        right = 0
+        for i in range(count):
+            if predictions[i] == expected[i]:
+                right = right + 1
+
+        return right / count

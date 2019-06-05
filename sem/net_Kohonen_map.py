@@ -63,3 +63,19 @@ class Kohonen:
                 d[i] = d[i] + (self.w[j, i] - x_j[j]) ** 2
         ind = np.argmin(d)
         return ind, d[ind]
+
+    def evaluate(self, patterns: ndarray, expected: ndarray, count: int) -> float:
+        """
+        Evaluates the net.
+        :param patterns: validation data
+        :param expected: expected output per pattern
+        :param count: count of patterns
+        :return: accuracy
+        """
+        right = 0
+        for i in range(count):
+            prediction = self.equip(patterns[:,i])
+            if prediction == expected[i]:
+                right = right + 1
+
+        return right / count

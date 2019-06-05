@@ -29,7 +29,7 @@ for folderName in os.listdir(path + trainFolder):
 patterns = np.transpose(patterns)
 
 net_km = Kohonen(3, length)
-net_km.train(patterns, 0.75, 0.995, 1000, 1)
+net_km.train(patterns, 0.75, 0.995, 100, 1)
 
 i = 0
 results = np.zeros((3, 200))
@@ -42,3 +42,21 @@ for folderName in os.listdir(path + testFolder):
     i = i + 1
 
 print(results)
+
+patterns_val = np.zeros(600)
+i = 0
+for folderName in os.listdir(path + trainFolder):
+    for fileName in os.listdir(path + trainFolder + '/' + folderName):
+        img = ipp.serve(path + trainFolder + '/' + folderName + '/' + fileName)
+        patterns_val[i] = img
+        i = i + 1
+
+expected_val = np.zeros(600)
+for i in range(200, 400):
+    expected_val[i] = 1
+for i in range(400, 600):
+    expected_val[i] = 2
+
+print(net_km.evaluate(patterns, expected_val, 600))
+print(net_km.evaluate(patterns_val, expected_val, 600))
+
