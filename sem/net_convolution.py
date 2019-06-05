@@ -51,7 +51,7 @@ class CNN:
             patterns,
             steps_per_epoch=patterns.samples / batch_size,
             epochs=n_epochs,
-            verbose=2)
+            verbose=0)
 
     def predict(self, path: str, bits) -> ndarray:
         """
